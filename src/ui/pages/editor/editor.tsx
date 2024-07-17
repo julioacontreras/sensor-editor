@@ -5,11 +5,12 @@ import Topbar from './views/topbar/topbar'
 import Sidebar2D from './views/2d/sidebar-2d'
 import Sidebar3D from './views/3d/sidebar-3d'
 import { MODE_2D, MODE_3D } from '@/consts/modes'
-import { CanvasContext } from '@/context/canvas'
+import { CanvasContext, createCleanData } from '@/context/canvas'
 
 export default function Component() {
   const [mode, setMode] = useState<string>('')
   const viewer3D = useRef(null)
+  const data = createCleanData()
   
   useEffect(() => {
     init(900, 725).then((elDOM) => {
@@ -19,8 +20,9 @@ export default function Component() {
     })
   }, [mode])
 
+
   return (
-    <CanvasContext.Provider value={'ass'} >
+    <CanvasContext.Provider value={data} >
       <div className='p-3 flex flex-col gap-3'>
         <Topbar onChangeMode={setMode}></Topbar>
         <div className="flex gap-2">

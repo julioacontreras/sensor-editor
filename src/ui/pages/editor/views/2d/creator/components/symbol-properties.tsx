@@ -1,3 +1,4 @@
+import { TypeSymbolCanvas } from '@/types/asset'
 import { Input } from '@nextui-org/react'
 
 type Props = {
@@ -5,7 +6,7 @@ type Props = {
 }
 
 export default function Component(props: Props) {
-  if (props.asset != 0) {
+  if (props.asset === TypeSymbolCanvas.NULL) {
     return
   }
   return (
