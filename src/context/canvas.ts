@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import {type CanvasContextData, StateInteraction } from '@/types/canvas-context-data'
+import {type CanvasContextData, StateInteraction, TypeElement } from '@/types/canvas-context-data'
 
 export const createCleanData = () => {
   const data: CanvasContextData = {
@@ -8,11 +8,8 @@ export const createCleanData = () => {
       interfaces: []
     },
     interactions: {
-      state: StateInteraction.NULL
-      // orderCount: 0
-      // prepapreCreateRectAsset
-      // resizeRectAsset
-      // createRectAsset
+      stateInteraction: StateInteraction.NULL,
+      typeElement: TypeElement.RECTANGLE_2D,
     }
   }
   return data
