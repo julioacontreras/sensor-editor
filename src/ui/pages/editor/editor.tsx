@@ -15,7 +15,9 @@ export default function Component() {
 
   useEffect(() => {
     if (viewer3D?.current) {
-      (viewer3D.current as HTMLElement).appendChild(viewer.getDOM())
+      const el = (viewer3D.current as HTMLElement)
+      el.appendChild(viewer.getDOM())
+      viewer.updateOffset(el.getBoundingClientRect())
     }
   }, [])
 

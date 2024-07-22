@@ -14,6 +14,7 @@ import { createFloor } from './objects/create-floor'
 import { RectAttributes } from '@/types/asset-rect-attributes'
 import { Size } from '@/types/size'
 import { pointerMove } from './core/base/pointer-move'
+import { Offset } from '@/types/offset'
 
 export class Viewer {
   renderer
@@ -22,7 +23,8 @@ export class Viewer {
   objects: THREE.Object3D[] = []
   raycaster = new THREE.Raycaster()
   pointer = new THREE.Vector2()
-  size:Size = {w: 0, h:0}
+  size: Size = { w: 0, h: 0 }
+  offset: Offset = { left: 0, right: 0, top: 0, bottom: 0  }
 
   constructor(width: number, height: number) {
     this.size.w = width
@@ -39,26 +41,12 @@ export class Viewer {
     this.camera.updateMatrixWorld()
 
     this.createCube()
-    /*
-    // create la area para inserseccionar el rayo
-    this.createShape({
-      name: 'intersection-area', 
-      size: {
-        w: 2000,
-        h: 2000
-      },
-      position: {
-        x: 0,
-        y: 0,
-        z: 0
-      },
-      backgroundColor: 0xcccccc,
-      renderOnTop: true,
-      renderOrder: 5,
-      visible: true
-    })
-    */
+  
     this.start()
+  }
+
+  updateOffset(offset: Offset) {
+    this.offset = offset
   }
   
   render() {
@@ -119,7 +107,7 @@ export class Viewer {
   }
 
   pointerMouse(event: MouseEvent) {
-    return pointerMove(this.pointer, event, this.size)
+    return pointerMove(this.pointer, event, this.size, this.offset)
   }
 
 }
