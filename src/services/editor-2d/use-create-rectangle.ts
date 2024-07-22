@@ -32,6 +32,7 @@ export const useCreateRectangle = (
       // creating
       const handleMouseMove = (event: MouseEvent) => {
         // moving line helpers
+        viewer.pointerMouse(event)
       }
       
       // created
