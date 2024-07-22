@@ -1,6 +1,7 @@
 export type RectAttributes = {
-  rounded: number,
-  smooth: number,
+  name: string
+  rounded?: number,
+  smooth?: number,
   size: {
     w: number
     h: number
@@ -8,7 +9,12 @@ export type RectAttributes = {
   position: {
     x: number
     y: number
+    z: number
   },
-  backgroundColor: string
-  behaviorId: number
+  backgroundColor: number
+  behaviorId?: number
+  renderOrder: number
+  renderOnTop: boolean
+  opacity?: number
+  visible: boolean  
 }

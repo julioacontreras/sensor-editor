@@ -7,7 +7,7 @@ import { BOUND_NULL } from '@/types/symbol-canvas'
 import { CanvasContext } from '@/context/canvas'
 import { CanvasContextData, StateInteraction, TypeElement } from '@/types/canvas-context-data'
 import { TypeSymbolCanvas } from '@/types/asset'
-import { useCreateRectangle } from '@/services/use-create-rectangle'
+import { useCreateRectangle } from '@/services/editor-2d/use-create-rectangle'
 
 export default function Component() {
   const [typeBound, setTypeBound] = useState<number>(BOUND_NULL)
