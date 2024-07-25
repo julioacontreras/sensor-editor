@@ -9,8 +9,8 @@ Is a BIM (Build Information Modeling) editor to create sensor in:
 
 * Getting started
 
-´´´bash
+```bash
   npm install
   npm run dev
-´´´
+```
 
