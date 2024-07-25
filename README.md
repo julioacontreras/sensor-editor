@@ -7,7 +7,7 @@ Is a BIM (Build Information Modeling) editor to create sensor in:
 * Floor
 * Room
 
-* Getting started
+## Getting started
 
 ```bash
   npm install
